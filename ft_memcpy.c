@@ -6,15 +6,16 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:46:20 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/20 12:56:04 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/21 14:42:56 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *dp;
-	const char *sp;
+	char		*dp;
+	const char	*sp;
 
 	dp = dest;
 	sp = src;
@@ -22,5 +23,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	{
 		*dp++ = *sp++;
 	}
-	return dest;
+	return (dest);
 }

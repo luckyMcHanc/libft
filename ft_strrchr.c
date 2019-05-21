@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:07:23 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/20 10:35:49 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/21 15:00:30 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char *len;
 
-	len  = (0);
-	while(*s)
+	len = 0;
+	while (*s)
 	{
-		if(*s == c)
+		if (*s == c)
 		{
-			len =(char*)s;
+			len = (char*)s;
 		}
 		++s;
 	}
-	if(len)
+	if (len)
 	{
 		return (len);
 	}
-	return 0;
+	return (0);
 }

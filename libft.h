@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrameau <jrameau@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/21 21:30:24 by jrameau           #+#    #+#             */
-/*   Updated: 2017/07/01 16:44:48 by jrameau          ###   ########.fr       */
+/*   Created: 2019/05/21 15:25:25 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/21 15:28:52 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+#define LIBFT_H
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-# define BUFF_SIZE 100
-# define MALLCHECK(x) if (!x) return (-1);
-# define IS_SPACE(x) (x == ' ' || x == '\t' || x == '\r' || x == '\f')
+#define BUFF_SIZE 100
+#define MALLCHECK(x) if (!x) return (-1);
+#define IS_SPACE(x) (x == ' ' || x == '\t' || x == '\r' || x == '\f')
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);

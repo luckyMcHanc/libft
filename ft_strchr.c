@@ -6,21 +6,21 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:11:54 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/21 10:20:46 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/21 14:20:02 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strchr( char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	while(*s)
+	while (*s)
 	{
-		if(*s == c)
+		if (*s == c)
 		{
 			return ((char*)s);
 		}
 		++s;
 	}
-	return 0;
+	return (0);
 }
