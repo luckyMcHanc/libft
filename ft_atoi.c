@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:47:11 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/21 09:16:53 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/21 08:56:36 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/21 09:14:44 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_atoi(const char *str)
 {
-	unsigned char *p;
+	int i;
+	int nbr;
+	int sign;
 
-	p = (unsigned char*)s;
-	while (n--)
-		if (*p != (unsigned char)c)
-			p++;
-		else
-			return (p);
-	return (0);
+	i = 0;
+	nbr = 0;
+	sign = 1;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
+			|| str[i] == '\v' || str[i] == '\f' || str[i] == ' ')
+	{
+		i++;
+	}
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+		{
+			sign = -1;
+		}
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nbr = (nbr * 10) + (str[i++] - '0');
+	}
+	return (nbr * sign);
 }
