@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 10:46:20 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/20 12:56:04 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/20 13:04:52 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/20 13:06:07 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int		strncmp(const char* s1, const char* s2, size_t n)
 {
-	char *dp;
-	const char *sp;
-
-	dp = dest;
-	sp = src;
 	while (n--)
-	{
-		*dp++ = *sp++;
-	}
-	return dest;
+		if (*s1++ != *s2++)
+			return *(unsigned char*)(s1 - 1) - *(unsigned char*)(s2 - 1);
+	return 0;
 }
