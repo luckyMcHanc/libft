@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_ft.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:41:38 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/23 13:41:47 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/23 13:39:25 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/23 13:39:43 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		++s;
-	}
+	write(fd, &c, 1);
 }
