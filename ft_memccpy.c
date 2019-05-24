@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 12:43:48 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/24 11:39:23 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/24 09:40:57 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/24 11:46:21 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char		*pd;
-	const char	*ps;
+	char		*dp;
+	const char	*sp;
 	int			i;
-	char		*temp;
 
-	pd = dest;
-	ps = src;
 	i = 0;
-	temp = (char *)malloc(sizeof(ps) + 1);
+	dp = dst;
+	sp = src;
 	while (i < n)
 	{
-		temp[i] = ps[i];
+		if (sp[i] != (unsigned char)c)
+		{
+			dp[i] = sp[i];
+		}
+		else
+		{
+			dp[i] = sp[i];
+			i = n;
+		}
 		i++;
 	}
-	i = 0;
-	while (i < n)
-	{
-		pd[i] = temp[i];
-		i++;
-	}
-	return (dest);
+	return (dst);
 }
