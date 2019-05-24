@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 10:38:45 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/24 12:31:43 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/24 14:22:48 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/24 15:53:32 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*ft_strnew(size_t size)
 {
-	size_t n;
+	char *newstr;
 
-	n = ft_strlen(s2);
-	while (*s1)
-		if (!ft_memcmp(s1++, s2, n))
-			return (s1 - 1);
-	return (0);
+	newstr = (char *)malloc(size);
+	if (newstr == NULL)
+	{
+		return (NULL);
+	}
+	ft_bzero(newstr, size);
+	return (newstr);
 }
