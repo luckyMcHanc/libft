@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 12:43:48 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/24 11:39:23 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:11:23 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		pd[i] = temp[i];
 		i++;
 	}
+	pd[i] = '\0';
 	return (dest);
 }

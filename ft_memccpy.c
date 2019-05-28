@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 09:40:57 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/24 11:46:21 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:09:51 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		}
 		i++;
 	}
+	dp[i] = '\0';
 	return (dst);
 }

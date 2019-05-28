@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 14:37:26 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 10:02:15 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/28 11:16:14 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
+	substr[i] = '\0';
 	return (substr);
 }
