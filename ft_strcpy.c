@@ -6,13 +6,13 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:20:52 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/21 14:50:31 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/28 09:46:19 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t i;
 

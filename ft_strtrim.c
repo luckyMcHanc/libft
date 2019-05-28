@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:30:22 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/27 13:40:06 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/05/28 10:07:57 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,20 @@ char	*ft_strtrim(char const *s)
 
 	i = 0;
 	len = ft_strlen(s);
-	newstr = (char *)malloc((len + 1) * sizeof(char));
-	while (s[i] != '\0')
-	{
-		if (s[0] == ' ' || s[0] == '\t' || s[0] == '\n')
+	newstr = (char *)malloc((len + 2) * sizeof(char));
+	if (s[0] == ' ' || s[0] == '\t' || s[0] == '\n')
+		while (s[i])
 		{
 			newstr[i] = s[i + 1];
+			i++;
 		}
-		else
-		{
-			newstr[i] = s[i];
-		}
-		i++;
-	}
+	else
+		newstr = ft_strcpy(newstr, s);
 	len = ft_strlen(newstr);
 	if (newstr[len - 1] == '\n' ||
 		newstr[len - 1] == '\t' || newstr[len - 1] == ' ')
-	{
 		newstr[len - 1] = '\0';
-	}
 	else
-	{
-	newstr[len] = '\0';
-	}
-	ft_putnbr(len);
+		newstr[len] = '\0';
 	return (newstr);
-}
-
-int main()
-{
-	char s[10] = "luckylucky";
-	ft_putendl(ft_strtrim(s));
-	return 0;
 }

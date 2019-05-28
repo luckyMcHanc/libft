@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/25 14:37:26 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 10:02:15 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/05/28 10:10:13 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/28 10:52:20 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	**ft_strsplit(char const *s, char c)
 {
-	char	*substr;
+	char	**arr;
 	int		i;
+	int		j;
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
-	if (ft_strlen(s) < start)
-	{
-		return (NULL);
-	}
 	i = 0;
-	substr = (char *)malloc(len);
-	while ((i < len) && (s[start] != '\0'))
+	j = 0;
+	arr = (char **)malloc(ft_strlen(s) + 1);
+	while (s[i])
 	{
-		substr[i] = s[start];
+		if (s[i] == c)
+		{
+			j++;
+		}
+		arr[j][i] = s[i];
 		i++;
-		start++;
 	}
-	return (substr);
+	return (arr);
+}
+
+int main()
+{
+	char s[100] = "lucky Mhlanga";
+	char c = ' ';
+   ft_putendl(*ft_strsplit(s, c));
+   return 0;
 }
