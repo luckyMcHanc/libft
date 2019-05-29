@@ -1,7 +1,18 @@
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/29 11:53:11 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/05/29 11:57:33 by lmhlanga         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		len(long nb)
+#include "libft.h"
+
+static int		len(long nb)
 {
 	int		len;
 
@@ -21,7 +32,7 @@ int		len(long nb)
 
 char	*ft_itoa(int nb)
 {
-	char *str;
+	char	*str;
 	long	n;
 	int		i;
 
@@ -32,8 +43,7 @@ char	*ft_itoa(int nb)
 	str[i--] = '\0';
 	if (n == 0)
 	{
-		str[0] = 48;
-		return (str);
+		return (str[0] = 48);
 	}
 	if (n < 0)
 	{
@@ -47,10 +57,4 @@ char	*ft_itoa(int nb)
 		i--;
 	}
 	return (str);
-}
-
-int main(void)
-{
-	printf("%s\n", ft_itoa(123156));
-	return (0);
 }
