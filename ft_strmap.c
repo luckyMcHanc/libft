@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 11:56:34 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/03 13:39:03 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/06/03 15:43:39 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/06/03 15:44:21 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t	i;
-	char	*str;
+	char	*newstr;
+	int		i;
 
 	i = 0;
-	str = s;
-	if (n)
+	if ((newstr = (char *)malloc(ft_strlen(s) + 1)) == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		while (i < n)
-		{
-			str[i] = 0;
-			i++;
-		}
+		newstr[i] = f(s[i]);
+		i++;
 	}
+	return (newstr);
 }

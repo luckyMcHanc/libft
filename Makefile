@@ -6,7 +6,7 @@
 #    By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 11:49:15 by lmhlanga          #+#    #+#              #
-#    Updated: 2019/05/31 12:47:21 by lmhlanga         ###   ########.fr        #
+#    Updated: 2019/06/03 16:05:35 by lmhlanga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,19 +55,16 @@ SRC		= ft_atoi.c \
 		  ft_strnequ.c \
 		  ft_strnew.c \
 		  ft_strrchr.c \
-		  ft_strstr.c \
 		  ft_strsub.c \
 		  ft_strtrim.c \
 		  ft_tolower.c \
 		  ft_toupper.c
 
-HEADER	= ./
-
-ALL : $(NAME)
+all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wetra -Werror -c $(SRC) -I. $(HEADER) 
-	ar rc $(NAME) *.O
+	gcc -Wall -Wextra -Werror -c $(SRC)  
+	ar rc $(NAME) *.o
 
 clean : 
 	rm -f *.o

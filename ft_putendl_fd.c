@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:40:20 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/23 13:40:31 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/03 13:44:10 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_putendl_fd(char const *s, int fd)
 		ft_putchar_fd(*s, fd);
 		++s;
 	}
-	ft_putchar('\n', fd);
+	ft_putchar_fd('\n', fd);
 }

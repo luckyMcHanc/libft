@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 09:40:57 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 11:09:51 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/03 13:39:36 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	char		*dp;
 	const char	*sp;
-	int			i;
+	size_t		i;
 
 	i = 0;
 	dp = dst;

@@ -6,11 +6,11 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 13:41:57 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/23 13:42:25 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/03 13:44:52 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {

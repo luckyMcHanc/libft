@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 14:37:26 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 11:16:14 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/03 14:53:04 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*substr;
-	int		i;
+	char			*substr;
+	size_t			i;
+	unsigned int	l;
 
 	if (s == NULL)
 	{
 		return (NULL);
 	}
-	if (ft_strlen(s) < start)
+	l = 0;
+	len = ft_strlen(s);
+	if (l < start)
 	{
 		return (NULL);
 	}
