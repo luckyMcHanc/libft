@@ -6,21 +6,27 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:11:54 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 11:12:39 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/05 13:34:04 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char *str;
+
+	str = (char*)s;
+	while (*str)
 	{
-		if (*s == c)
-		{
-			return ((char*)s);
-		}
-		++s;
+		if (str ==)
+			return (NULL);
+		s++;
 	}
-	return (0);
+	return (str);
+}
+
+int main()
+{
+	ft_putendl(ft_strchr("lucg",'d'));
 }

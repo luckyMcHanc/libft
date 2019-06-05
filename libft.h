@@ -6,14 +6,17 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:25:25 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/03 16:02:26 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/05 08:31:52 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
+
 #include <string.h>
+
 #include <unistd.h>
+
 #include <stdlib.h>
 
 void				ft_putchar(char c);
