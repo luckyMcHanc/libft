@@ -48,6 +48,10 @@ SRC		= ft_atoi.c \
 		  ft_striteri.c \
 		  ft_strjoin.c \
 		  ft_strlen.c \
+		  ft_strlcat.c \
+		  ft_strstr.c \
+		  ft_strnstr.c \
+		  ft_strmap.c \
 		  ft_strmapi.c \
 		  ft_strncat.c \
 		  ft_strncmp.c \
@@ -58,6 +62,7 @@ SRC		= ft_atoi.c \
 		  ft_strsub.c \
 		  ft_strtrim.c \
 		  ft_tolower.c \
+		  ft_strsplit.c \
 		  ft_toupper.c
 
 all : $(NAME)

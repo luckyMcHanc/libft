@@ -12,15 +12,25 @@
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	size_t	n;
-	char	*s;
+	unsigned int pos;
+	unsigned int i;
 
-	s = s1;
-	n = ft_strlen(s2);
-	while (*s)
-		if (!ft_memcmp(s++, s2, n))
-			return (n - 1);
+	if (!*to_find)
+		return ((char*)str);
+	pos = 0;
+	while (str[pos] != '\0')
+	{
+		if (str[pos] == to_find[0])
+		{
+			i = 1;
+			while (to_find[i] != '\0' && str[pos + i] == to_find[i])
+				++i;
+			if (to_find[i] == '\0')
+				return ((char*)&str[pos]);
+		}
+		++pos;
+	}
 	return (0);
 }

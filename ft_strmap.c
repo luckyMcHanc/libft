@@ -25,5 +25,6 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		newstr[i] = f(s[i]);
 		i++;
 	}
+	newstr[i] = '\0';
 	return (newstr);
 }

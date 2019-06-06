@@ -12,28 +12,68 @@
 
 #include "libft.h"
 
+int static	firstchar(char *s, char *spaces)
+{
+	int count;
+	int tmp;
+	int i;
+
+	count = 0;
+	while (*s)
+	{
+		tmp = count;
+		i = 0;
+		while (spaces[i])
+			if (spaces[i++] == *s)
+				count++;
+		if (count == tmp)
+			return (count);
+		s++;
+	}
+	return (count);
+}
+int static lastchar(char *s, char *spaces)
+{
+	int count;
+	int	len;
+	int i;
+	int tmp;
+
+	count = 0;
+	len = ft_strlen(s) - 1;
+	while (s[len])
+	{
+		tmp = count;
+		i = 0;
+		while (spaces[i])
+			if (spaces[i++] == s[len])
+				count++;
+		if (count == tmp)
+			return (count);
+		len--;
+	}
+	return (count);
+}
 char	*ft_strtrim(char const *s)
 {
-	int		i;
 	char	*newstr;
 	int		len;
+	int		start;
+	int		spacecount;
+	char	*str;
 
-	i = 0;
+	str = (char *)s;
+	if (!str)
+		return (NULL);
 	len = ft_strlen(s);
-	newstr = (char *)malloc((len + 2) * sizeof(char));
-	if (s[0] == ' ' || s[0] == '\t' || s[0] == '\n')
-		while (s[i])
-		{
-			newstr[i] = s[i + 1];
-			i++;
-		}
-	else
-		newstr = ft_strcpy(newstr, s);
-	len = ft_strlen(newstr);
-	if (newstr[len - 1] == '\n' ||
-		newstr[len - 1] == '\t' || newstr[len - 1] == ' ')
-		newstr[len - 1] = '\0';
-	else
-		newstr[len] = '\0';
+	spacecount = firstchar(str, " \n\t");
+	start = spacecount;
+	if (len > spacecount)
+		spacecount += lastchar(str, " \n\t");
+	len -= spacecount; 
+	if (!(newstr = ft_memalloc((size_t)len + 1)))
+		return (NULL);
+	newstr = ft_strncpy(newstr, (char*)str + start, len);
+	newstr[len + 1] = '\0';
 	return (newstr);
 }
