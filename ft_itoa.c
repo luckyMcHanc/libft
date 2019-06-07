@@ -38,7 +38,8 @@ char	*ft_itoa(int nb)
 
 	n = nb;
 	i = len(n);
-	str = (char*)malloc(sizeof(char) * (i + 1));
+	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
 	str[i--] = '\0';
 	if (n == 0)
 	{
