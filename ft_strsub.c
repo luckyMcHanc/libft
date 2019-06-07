@@ -14,31 +14,22 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char			*substr;
 	size_t			i;
-	unsigned int	l;
-	size_t			size;
+	char			*str;
+	unsigned char	*st1;
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
-	l = 0;
-	len = ft_strlen(s);
-	if (l < start)
-	{
-		return (NULL);
-	}
-	size = len - start;
 	i = 0;
-	if (!(substr = (char *)malloc(len + 1)))
+	str = (char *)ft_memalloc(sizeof(char) * len + 1);
+	st1 = (unsigned char *)s;
+	if (str == NULL)
 		return (NULL);
-	while ((i < size) && (s[start] != '\0'))
+	if (st1 == NULL)
+		return (0);
+	while (i < len)
 	{
-		substr[i] = s[start];
+		str[i] = st1[start + i];
 		i++;
-		start++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	str[i] = '\0';
+	return (str);
 }

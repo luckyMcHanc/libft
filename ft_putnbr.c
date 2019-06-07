@@ -14,7 +14,9 @@
 
 void	ft_putnbr(int nbr)
 {
-	if (nbr < 0)
+	if (nbr == -2147483648)
+		ft_putstr("-2147483648");
+	else if (nbr < 0)
 	{
 		ft_putchar('-');
 		ft_putnbr(-nbr);

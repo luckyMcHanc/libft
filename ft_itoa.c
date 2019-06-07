@@ -30,32 +30,28 @@ int		len(long nb)
 	return (len);
 }
 
-char	*ft_itoa(int nb)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	long	n;
 	int		i;
 
-	n = nb;
-	i = len(n);
-	if (!(str = (char*)malloc(sizeof(char) * (i + 1))))
+	i = 0;
+	if (!(str = (char *)ft_memalloc(sizeof(char) * 2)))
 		return (NULL);
-	str[i--] = '\0';
-	if (n == 0)
-	{
-		str[0] = 48;
-		return (str);
-	}
-	if (n < 0)
+	if (n == -2147483648)
+		return (ft_strcpy(str, "-2147483648"));
+	if (n < i)
 	{
 		str[0] = '-';
-		n = n * -1;
+		str[1] = '\0';
+		str = ft_strjoin(str, ft_itoa(-n));
 	}
-	while (n > 0)
+	else if (n >= 10)
+		str = ft_strjoin(ft_itoa(n / 10), ft_itoa(n % 10));
+	else if (n < 10 && n >= 0)
 	{
-		str[i] = 48 + (n % 10);
-		n = n / 10;
-		i--;
+		str[0] = n + '0';
+		str[1] = '\0';
 	}
 	return (str);
 }
