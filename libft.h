@@ -6,18 +6,16 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:25:25 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/05 08:31:52 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/09 11:23:40 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <string.h>
-
-#include <unistd.h>
-
-#include <stdlib.h>
+# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
@@ -64,7 +62,7 @@ char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *s1, const char *s2);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-char				*ft_strnstr(const char *str, 
+char				*ft_strnstr(const char *str,
 						const char *to_find, size_t len);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
