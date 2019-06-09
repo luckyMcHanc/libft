@@ -6,13 +6,13 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:30:22 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 11:16:40 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/09 14:14:38 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int static	firstchar(char *s, char *spaces)
+static int		firstchar(char *s, char *spaces)
 {
 	int count;
 	int tmp;
@@ -32,7 +32,8 @@ int static	firstchar(char *s, char *spaces)
 	}
 	return (count);
 }
-int static lastchar(char *s, char *spaces)
+
+static int		lastchar(char *s, char *spaces)
 {
 	int count;
 	int	len;
@@ -54,7 +55,8 @@ int static lastchar(char *s, char *spaces)
 	}
 	return (count);
 }
-char	*ft_strtrim(char const *s)
+
+char			*ft_strtrim(char const *s)
 {
 	char	*newstr;
 	int		len;
@@ -70,7 +72,7 @@ char	*ft_strtrim(char const *s)
 	start = spacecount;
 	if (len > spacecount)
 		spacecount += lastchar(str, " \n\t");
-	len -= spacecount; 
+	len -= spacecount;
 	if (!(newstr = ft_memalloc((size_t)len + 1)))
 		return (NULL);
 	newstr = ft_strncpy(newstr, (char*)str + start, len);
