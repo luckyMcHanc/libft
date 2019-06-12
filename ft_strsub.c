@@ -19,17 +19,18 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	unsigned char	*st1;
 
 	i = 0;
-	str = (char *)ft_memalloc(sizeof(char) * len + 1);
-	st1 = (unsigned char *)s;
-	if (str == NULL)
-		return (NULL);
-	if (st1 == NULL)
-		return (0);
-	while (i < len)
+	if (s && start >= 0)
 	{
-		str[i] = st1[start + i];
-		i++;
+		if (!(str = (char *)ft_memalloc(sizeof(char) * len + 1)))
+			return (NULL);
+		st1 = (unsigned char *)s;
+		while (i < len)
+		{
+			str[i] = st1[start + i];
+			i++;
+		}
+		str[i] = '\0';
+		return (str);
 	}
-	str[i] = '\0';
-	return (str);
+	return (NULL);
 }

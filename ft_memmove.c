@@ -18,24 +18,26 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char		*pd;
 	const char	*ps;
 
-	pd = dest;
-	ps = src;
-	if (pd == NULL && ps == NULL)
-		return (NULL);
-	if (n <= 0)
-		return (dest);
-	if (ps < pd)
+	if (dest && src)
 	{
-		while (n)
+		pd = dest;
+		ps = src;
+		if (n <= 0)
+			return (dest);
+		if (ps < pd)
 		{
-			pd[n - 1] = ps[n - 1];
-			n--;
+			while (n)
+			{
+				pd[n - 1] = ps[n - 1];
+				n--;
+			}
+			return (dest);
 		}
-		return (dest);
+		else
+		{
+			ft_memcpy(pd, ps, n);
+			return (dest);
+		}
 	}
-	else
-	{
-		ft_memcpy(pd, ps, n);
-		return (dest);
-	}
+	return (NULL);
 }

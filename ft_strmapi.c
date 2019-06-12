@@ -18,13 +18,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	if ((newstr = (char *)malloc(ft_strlen(s) + 1)) == NULL)
-		return (NULL);
-	while (s[i])
+	if (s)
 	{
-		newstr[i] = f(s[i], i);
-		i++;
+		if ((newstr = (char *)malloc(ft_strlen(s) + 1)) == NULL)
+			return (NULL);
+		while (s[i])
+		{
+			newstr[i] = f(s[i], i);
+			i++;
+		}
+		newstr[i] = '\0';
+		return (newstr);
 	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (NULL);
 }

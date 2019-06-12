@@ -64,18 +64,20 @@ char			*ft_strtrim(char const *s)
 	int		spacecount;
 	char	*str;
 
-	str = (char *)s;
-	if (!str)
-		return (NULL);
-	len = ft_strlen(s);
-	spacecount = firstchar(str, " \n\t");
-	start = spacecount;
-	if (len > spacecount)
-		spacecount += lastchar(str, " \n\t");
-	len -= spacecount;
-	if (!(newstr = ft_memalloc((size_t)len + 1)))
-		return (NULL);
-	newstr = ft_strncpy(newstr, (char*)str + start, len);
-	newstr[len + 1] = '\0';
-	return (newstr);
+	if (s)
+	{
+		str = (char *)s;
+		len = ft_strlen(s);
+		spacecount = firstchar(str, " \n\t");
+		start = spacecount;
+		if (len > spacecount)
+			spacecount += lastchar(str, " \n\t");
+		len -= spacecount;
+		if (!(newstr = ft_memalloc((size_t)len + 1)))
+			return (NULL);
+		newstr = ft_strncpy(newstr, (char*)str + start, len);
+		newstr[len + 1] = '\0';
+		return (newstr);
+	}
+	return (NULL);
 }

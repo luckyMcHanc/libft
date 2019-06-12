@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -19,9 +18,9 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned const char	*sp;
 	size_t				i;
 
+	i = 0;
 	if (src && dst)
 	{
-		i = 0;
 		dp = (unsigned char *)dst;
 		sp = (unsigned char *)src;
 		while (sp[i] && i < n)

@@ -61,17 +61,21 @@ char			**ft_strsplit(const char *str, char c)
 
 	i = 0;
 	j = 0;
-	if (!(wrd = ft_count_words(str, c)))
-		return (NULL);
-	if (!(s = (char **)malloc(sizeof(s) * (ft_count_words(str, c) + 2))))
-		return (NULL);
-	while (str[i] == c && str[i])
-		i++;
-	while (j < wrd && str[i])
+	if (str)
 	{
-		s[j] = ft_word(str, c, &i);
-		j++;
+		if (!(wrd = ft_count_words(str, c)))
+			return (NULL);
+		if (!(s = (char **)malloc(sizeof(s) * (ft_count_words(str, c) + 2))))
+			return (NULL);
+		while (str[i] == c && str[i])
+			i++;
+		while (j < wrd && str[i])
+		{
+			s[j] = ft_word(str, c, &i);
+			j++;
+		}
+		s[j] = NULL;
+		return (s);
 	}
-	s[j] = NULL;
-	return (s);
+	return (NULL);
 }
