@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/25 14:17:28 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/03 13:52:17 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/24 09:56:30 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 				return (0);
 			}
 		}
-	return (1);
+		return (1);
 	}
 	return (0);
 }

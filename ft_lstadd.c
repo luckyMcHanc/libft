@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/25 13:29:41 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 09:52:24 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/06/24 09:32:16 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/06/25 15:04:38 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int i;
+	t_list *list;
 
-	i = 0;
-	if (s1 && s2)
-	{
-		while (s1[i])
-		{
-			if (s1[i] == s2[i])
-			{
-				i++;
-			}
-			else
-			{
-				return (0);
-			}
-		}
-		return (1);
-	}
-	return (0);
+	list = new;
+	list->next = *alst;
+	*alst = list;
 }

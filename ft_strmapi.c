@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 11:36:17 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/05 13:47:14 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/24 09:11:47 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 			return (NULL);
 		while (s[i])
 		{
-			newstr[i] = f(s[i], i);
+			newstr[i] = f(i, s[i]);
 			i++;
 		}
 		newstr[i] = '\0';

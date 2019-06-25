@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   lstiter.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/25 13:29:41 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 09:52:24 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/06/24 09:35:45 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/06/24 09:50:20 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int i;
-
-	i = 0;
-	if (s1 && s2)
+	while (lst)
 	{
-		while (s1[i])
-		{
-			if (s1[i] == s2[i])
-			{
-				i++;
-			}
-			else
-			{
-				return (0);
-			}
-		}
-		return (1);
+		f(lst);
+		lst = lst->next;
 	}
-	return (0);
 }

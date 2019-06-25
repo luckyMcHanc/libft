@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/25 13:29:41 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 09:52:24 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/06/24 09:14:10 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/06/24 10:57:09 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	int i;
+	t_list *list;
 
-	i = 0;
-	if (s1 && s2)
+	if (!(list = (t_list *)malloc(sizeof(list) * content_size)))
+		return (NULL);
+	if (content)
 	{
-		while (s1[i])
-		{
-			if (s1[i] == s2[i])
-			{
-				i++;
-			}
-			else
-			{
-				return (0);
-			}
-		}
-		return (1);
+		if (!(list->content = (void *)malloc(content_size)))
+			return (NULL);
+		ft_memcpy(list->content, content, content_size);
+		list->content_size = content_size;
 	}
-	return (0);
+	else
+	{
+		list->content = NULL;
+		list->content_size = 0;
+	}
+	list->next = NULL;
+	return (list);
 }

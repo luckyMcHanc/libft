@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 10:46:20 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/04 14:12:56 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/24 11:27:05 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t		i;
 
 	i = 0;
-	if (src && dst)
+	dp = dst;
+	sp = src;
+	while (n)
 	{
-		dp = dst;
-		sp = src;
-		while (i < n)
-		{
-			dp[i] = sp[i];
-			i++;
-		}
-		return (dst);
+		dp[i] = sp[i];
+		i++;
+		n--;
 	}
-	return (NULL);
+	return (dst);
 }
