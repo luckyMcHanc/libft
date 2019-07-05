@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 15:25:25 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 09:58:45 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/07/04 15:31:08 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void				ft_putnbr_fd(int n, int fd);
 
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
+char				*ft_strndup(const char *s1, size_t n);
 
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
@@ -52,6 +53,8 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(const char *str, char c);
+char				*ft_charjoin(char *line, int c);
+int					ft_copyuntil(char **line, char *content, int c);
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -85,6 +88,13 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstnew(void const *content, size_t content_size);
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 # ifndef IS_SPACE
 #  define IS_SPACE(x) (x==' '||x=='\n'||x=='\t')

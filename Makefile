@@ -6,7 +6,7 @@
 #    By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 11:49:15 by lmhlanga          #+#    #+#              #
-#    Updated: 2019/06/24 09:20:50 by lmhlanga         ###   ########.fr        #
+#    Updated: 2019/07/04 15:30:16 by lmhlanga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ SRC		= ft_atoi.c \
 		  ft_isdigit.c \
 		  ft_isprint.c \
 		  ft_itoa.c \
+		  ft_strndup.c \
+		  ft_charjoin.c \
+		  ft_copyuntil.c \
 		  ft_memalloc.c \
 		  ft_memccpy.c \
 		  ft_memchr.c \
@@ -63,9 +66,15 @@ SRC		= ft_atoi.c \
 		  ft_strtrim.c \
 		  ft_tolower.c \
 		  ft_strsplit.c \
-		  ft_toupper.c
+		  ft_toupper.c \
+		  ft_lstadd.c \
+		  ft_lstdel.c \
+		  ft_lstdelone.c \
+		  ft_lstiter.c \
+		  ft_lstmap.c \
+		  ft_lstnew.c \
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME) :
 	gcc -Wall -Wextra -Werror -c $(SRC)  

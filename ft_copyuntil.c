@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_copyuntil.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:40:51 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 10:56:47 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/07/01 11:16:06 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/07/04 12:12:32 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nbr, int fd)
+int		ft_copyuntil(char **line, char *content, int c)
 {
-	if (nbr && fd)
+	int		i;
+	int		j;
+	int		k;
+
+	i = 0;
+	j = 0;
+	while (content[++i])
+		if (content[i] == c)
+			break ;
+	k = i;
+	if (!(*line = ft_strnew(i)))
+		return (0);
+	if (content[j] && j < i)
 	{
-		if (nbr == -2147483648)
-			ft_putstr_fd("-2147483648", fd);
-		else if (nbr < 0)
-		{
-			ft_putchar_fd('-', fd);
-			ft_putnbr_fd(-nbr, fd);
-		}
-		else if (nbr >= 10)
-		{
-			ft_putnbr_fd(nbr / 10, fd);
-			ft_putchar_fd(nbr % 10 + '0', fd);
-		}
-		else
-			ft_putchar_fd(nbr + '0', fd);
+		if (!(*line = ft_strncpy(*line, content, i)))
+			return (0);
 	}
-	return ;
+	return (k);
 }

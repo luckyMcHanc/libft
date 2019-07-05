@@ -6,7 +6,7 @@
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 08:56:36 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/05/28 11:07:16 by lmhlanga         ###   ########.fr       */
+/*   Updated: 2019/06/26 15:23:21 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-	int	res;
-	int	negative;
+	size_t	res;
+	int		negative;
 
 	negative = 1;
 	res = 0;

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmhlanga <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 13:40:51 by lmhlanga          #+#    #+#             */
-/*   Updated: 2019/06/24 10:56:47 by lmhlanga         ###   ########.fr       */
+/*   Created: 2019/07/04 15:26:31 by lmhlanga          #+#    #+#             */
+/*   Updated: 2019/07/04 15:37:55 by lmhlanga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nbr, int fd)
+char	*ft_strndup(const char *s1, size_t l)
 {
-	if (nbr && fd)
+	char	*s2;
+	size_t	i;
+
+	i = 0;
+	s2 = ft_strnew(l);
+	while (s1[i] && i < l)
 	{
-		if (nbr == -2147483648)
-			ft_putstr_fd("-2147483648", fd);
-		else if (nbr < 0)
-		{
-			ft_putchar_fd('-', fd);
-			ft_putnbr_fd(-nbr, fd);
-		}
-		else if (nbr >= 10)
-		{
-			ft_putnbr_fd(nbr / 10, fd);
-			ft_putchar_fd(nbr % 10 + '0', fd);
-		}
-		else
-			ft_putchar_fd(nbr + '0', fd);
+		s2[i] = s1[i];
+		i++;
 	}
-	return ;
+	return (s2);
 }
